@@ -9,12 +9,17 @@ import { HeaderComponent } from '../component/header/header.component';
 import { PlayerListComponent } from '../component/player-list/player-list.component';
 import { AdminloginComponent } from '../component/adminlogin/adminlogin.component';
 import { PageNotFoundComponent } from '../component/page-not-found/page-not-found.component';
+import { MainpageComponent} from '../component/mainpage/mainpage.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes=[
+{path: "",  redirectTo:'mainpage', pathMatch:'full'},
 {path: 'adminlogin',  component: AdminloginComponent},
-{ path: '**', component: PageNotFoundComponent }
+//{path: '**', component: PageNotFoundComponent },
+{path: 'mainpage', component: MainpageComponent},
+{path: 'player-list', component:PlayerListComponent}
+
 
 ]
 

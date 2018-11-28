@@ -12,6 +12,8 @@ import { AdminloginComponent } from './component/adminlogin/adminlogin.component
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { MainpageComponent } from './component/mainpage/mainpage.component';
+import { PlayerDetailsComponent } from './component/player-details/player-details.component';
 
 
 
@@ -21,10 +23,13 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     HeaderComponent,
     PlayerListComponent,
     AdminloginComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    MainpageComponent,
+    PlayerDetailsComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule
   
   ],
   providers: [],
