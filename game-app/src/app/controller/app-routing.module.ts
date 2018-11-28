@@ -2,19 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule }  from '@angular/core';
 
 
-import { AppComponent } from './app.component';
+import { AppComponent } from '../app.component';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HeaderComponent } from './header/header.component';
-import { PlayerListComponent } from './player-list/player-list.component';
-import { AdminloginComponent } from './adminlogin/adminlogin.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HeaderComponent } from '../component/header/header.component';
+import { PlayerListComponent } from '../component/player-list/player-list.component';
+import { AdminloginComponent } from '../component/adminlogin/adminlogin.component';
+import { PageNotFoundComponent } from '../component/page-not-found/page-not-found.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
-
-
-const AppRoutes: Routes=[
+const appRoutes: Routes=[
 {path: 'adminlogin',  component: AdminloginComponent},
 { path: '**', component: PageNotFoundComponent }
 
