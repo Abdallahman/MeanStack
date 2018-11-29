@@ -12,16 +12,18 @@ import { GameService } from '../../controller/service/game.service';
 })
 export class PlayerListComponent implements OnInit {
  
-  player: Player[];
  
+  playe$ : Object;
   selectedPlayer: Player;
 
-  constructor(private gameSerivce: GameService) {}
+  constructor(private gameService: GameService) {}
       
     ngOnInit() {
-      this.gameSerivce.getUsers();
+      this.gameService.getUsers().subscribe(
+        gameService=>this.playe$ = gameService
+      )
       
-  }
+    }
   onSelect(player: Player):void {
     this.selectedPlayer = player;
   }

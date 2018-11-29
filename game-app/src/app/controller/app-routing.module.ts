@@ -14,21 +14,18 @@ import { MainpageComponent} from '../component/mainpage/mainpage.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes=[
-//{path: "",  redirectTo:'mainpage', pathMatch:'full'},
+{path: "",  redirectTo:'app-root', pathMatch:'full'},
 {path: "adminlogin",  component: AdminloginComponent},
 //{path: '**', component: PageNotFoundComponent },
-{path:"mainpage",component: MainpageComponent },
-{path: "player-list", component: PlayerListComponent}
+{path:'mainpage' ,component: MainpageComponent },
+{path: 'player-list', component: PlayerListComponent}
 
 
 ]
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    )
+    RouterModule.forRoot(appRoutes)
   ],
   exports: [
     RouterModule

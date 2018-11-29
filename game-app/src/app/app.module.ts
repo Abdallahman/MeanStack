@@ -10,6 +10,7 @@ import { HeaderComponent } from './component/header/header.component';
 import { PlayerListComponent } from './component/player-list/player-list.component';
 import { AdminloginComponent } from './component/adminlogin/adminlogin.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
+import { HttpClientModule } from '@angular/common/http'
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { MainpageComponent } from './component/mainpage/mainpage.component';
@@ -29,7 +30,8 @@ import { PlayerDetailsComponent } from './component/player-details/player-detail
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   
   ],
   providers: [],
