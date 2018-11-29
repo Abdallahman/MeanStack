@@ -15,6 +15,11 @@ import { HttpClientModule } from '@angular/common/http'
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { MainpageComponent } from './component/mainpage/mainpage.component';
 import { PlayerDetailsComponent } from './component/player-details/player-details.component';
+import { AdminPalyerlistComponent } from './component/admin-palyerlist/admin-palyerlist.component';
+import { AdminEditplayerComponent } from './component/admin-editplayer/admin-editplayer.component';
+import { AdminAddplayerComponent } from './component/admin-addplayer/admin-addplayer.component';
+import { AdminGamelistComponent } from './component/admin-gamelist/admin-gamelist.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 
 
@@ -26,7 +31,12 @@ import { PlayerDetailsComponent } from './component/player-details/player-detail
     AdminloginComponent,
     PageNotFoundComponent,
     MainpageComponent,
-    PlayerDetailsComponent
+    PlayerDetailsComponent,
+    AdminPalyerlistComponent,
+    AdminEditplayerComponent,
+    AdminAddplayerComponent,
+    AdminGamelistComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

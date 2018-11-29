@@ -12,6 +12,8 @@ import { AdminloginComponent } from '../component/adminlogin/adminlogin.componen
 import { MainpageComponent} from '../component/mainpage/mainpage.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {FooterComponent} from '../component/footer/footer.component';
+
 
 const appRoutes: Routes=[
 {path: "",  redirectTo:'app-root', pathMatch:'full'},
