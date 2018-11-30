@@ -1,73 +1,61 @@
-
+<div class="container">
   <h3>Add Players</h3> 
-  <div class="container">
-  <form>
-    <div class="form-group">
-        <div class="form-group col-md-6">
-          <label> Player:   </label>
-          <input  type="inputPlayer" id="inputPlayer" placeholder="Player Name">
-        </div>
-    </div>
-  
-    <div class="form-group col-md-4">
-      <label>Rank:    </label>
-        <select id="inputRank">
-          <option selected>Select a Rank:</option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
-          <option>7</option>
-          <option>8</option>
-          <option>9</option>
-          <option>10</option>
-        </select>
-    </div>
 
+  <form #player1Form = "ngForm">
     <div class="form-group">
-      <div class="form-group col-md-6">   
-        <label> Player Score:   </label>
-        <input  type="text" id="inputPlayerScore" placeholder="Player Score">
+      <label for="player">Player: </label>
+      <input type="text" class="form-control" id="player"
+             required
+             [(ngModel)]="model.player" name="player"
+             #name="ngModel">
+      <div [hidden]="player.valid || player.pristine"
+           class="alert alert-danger">
+        Name is required
       </div>
     </div>
-    
+ 
+
     <div class="form-group">
-      <div class="form-group col-md-6"> 
-        <label> Player Time:   </label>
-        <input  type="text" id="inputPlayerTime" placeholder="Player Time">
+      <label for="playerRank">Rank: </label>
+      <select class="form-control" id="playerRank" required>
+        <option *ngFor="let rank of ranks" [value]="rank">{{rank}}</option>
+      </select>
+    </div>
+   
+    <div class="form-group">
+      <label> Player Score:   </label>
+      <input  type="text" class="form-control"
+        id="playerScore" 
+        [(ngModel)]="model.score" name="playerScore" 
+        #name="ngModel">
+
       </div>
+   
+    <div class="form-group">
+      <label for="time"> Player Time:   </label>
+      <input  type="text" class="form-control"  
+      id="time" [(ngModel)] ="model.time" name="time">
+ 
     </div>
 
-    <div class="form-group col-md-4">
-    <label>Favorite Game: </label>
-       <select id="favoriteGame">
-          <option selected>Select a Game:</option>
-           <option>Game 1</option>
-           <option>Game 2</option>
-           <option>Game 3</option>
-           <option>Game 4</option>
-           <option>Game 5</option>
-           <option>Game 6</option>
-           <option>Game 7</option>
-           <option>Game 8</option>
-           <option>Game 9</option>
-           <option>Game 10</option>
-        </select>
+    <!--read games from database-->
+    <div class="form-group">
+      <label for="favoriteGame">Favorite Game: </label>
+      <select class="form-control" id="favoritGame" required>
+        <option *ngFor="let game of games" [value]="game">{{game}}</option>
+      </select>
+    </div>  
+
+    <div class="form-group">
+      <label>Satus:</label>
+      <select class="form-control" id="status" required>
+        <option *ngFor="let status of status1" [value]="status">{{status}}</option>
+      </select>
   </div>  
-      
-  <div class="form-group col-md-4">
-    <label>Satus:</label>
-    <select id="playerStatus">
-      <option selected>Select a Status:</option>
-      <option>Available</option>
-      <option>Unavailable</option>
-    </select>
-  </div>  
-<div>
-  <button class="btn btn-primary" type="submit" id="addbutton">Add</button>
-  <button class="btn btn-primary" type="submit"id="cancelbutton" >Cancel</button>
-</div>
+  <div>
+    <button class="btn btn-primary" type="submit" id="addbutton">Add</button>
+    <br>
+    <button class="btn btn-primary" type="submit"id="cancelbutton" >Cancel</button>
+  </div>
   </form>
   </div>
