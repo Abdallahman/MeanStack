@@ -2,6 +2,7 @@
   <div class ="card mt-5" style="margin:auto;width:600px;">
     <div class= "card-body">
       <h3 class = "card-title">Login Page </h3>
+      <form (ngSubmit)="loginUser($event)">
       <div class="form-group">
         <label for="login"> Login: </label><br>
         <input type="text" id="login" placeholder="Enter your login">
@@ -12,6 +13,7 @@
     </div>
     <br>
     <button type="submit" class="btn btn-primary" >Login</button>
+  </form>
     </div>
   </div>
 </div>

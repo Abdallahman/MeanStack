@@ -1,3 +1,30 @@
-<p>
-  admin-gamelist works!
-</p>
+<div class = "container">
+  
+    <table class = "table table-striped">
+      <thead>
+        <tr>
+          <th scope = "col">Title</th>
+          <th scope = "col">Platform</th>
+          <th scope = "col">Genre</th>
+          <th scope = "col">Rating</th>
+          <th scope = "col">Publisher</th>
+          <th scope = "col">Release</th>
+          <th scope = "col">Status</th>
+          <th scope = "col"></th>
+        </tr>
+      </thead>
+        <tr *ngFor="let gam of gameService.games"
+       >
+          <td>{{ gam.title}} </td>
+          <td>{{ gam.platform}}</td>
+          <td>{{ gam.genre}}</td>
+          <td>{{ gam.rating}}</td>
+          <td> {{ gam.publisher}} </td>
+          <td> {{ gam.release}} </td>
+          <td> {{ gam.status}}  </td>
+          <td></td>
+        </tr>
+  </table>
+  
+  </div>
+  

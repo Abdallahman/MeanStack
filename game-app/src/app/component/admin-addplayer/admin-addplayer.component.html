@@ -1,61 +1,63 @@
 <div class="container">
   <h3>Add Players</h3> 
 
-  <form #player1Form = "ngForm">
+  <form #playerForm = "ngForm" (ngSubmit)="onSubmit(playerForm)">
+    <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="playerService.selectedPlayer._id" >
     <div class="form-group">
       <label for="player">Player: </label>
       <input type="text" class="form-control" id="player"
-             required
-             [(ngModel)]="model.player" name="player"
-             #name="ngModel">
-      <div [hidden]="player.valid || player.pristine"
+             required #player_name="ngModel"
+             [(ngModel)]="playerService.selectedPlayer.player_name" name="player_name"
+             >
+     <!-- <div [hidden]="player.valid || player.pristine"
            class="alert alert-danger">
         Name is required
-      </div>
+      </div>-->
     </div>
  
 
     <div class="form-group">
       <label for="playerRank">Rank: </label>
-      <select class="form-control" id="playerRank" required>
-        <option *ngFor="let rank of ranks" [value]="rank">{{rank}}</option>
-      </select>
-    </div>
+      <input  type="text" class="form-control"  #rank="ngModel"
+      id="rank" [(ngModel)] ="playerService.selectedPlayer.rank" name="rank">
+  </div>
    
     <div class="form-group">
       <label> Player Score:   </label>
       <input  type="text" class="form-control"
-        id="playerScore" 
-        [(ngModel)]="model.score" name="playerScore" 
-        #name="ngModel">
+        id="score" #score="ngModel"
+        [(ngModel)]="playerService.selectedPlayer.score" name="score" 
+        >
 
       </div>
    
     <div class="form-group">
       <label for="time"> Player Time:   </label>
-      <input  type="text" class="form-control"  
-      id="time" [(ngModel)] ="model.time" name="time">
+      <input  type="text" class="form-control"  #time="ngModel"
+      id="time" [(ngModel)] ="playerService.selectedPlayer.time" name="time">
  
     </div>
 
     <!--read games from database-->
     <div class="form-group">
-      <label for="favoriteGame">Favorite Game: </label>
-      <select class="form-control" id="favoritGame" required>
-        <option *ngFor="let game of games" [value]="game">{{game}}</option>
-      </select>
-    </div>  
+        <label> favourite game:   </label>
+      <input  type="text" class="form-control" #game_Played="ngModel"
+      id="game_Played" [(ngModel)] ="playerService.selectedPlayer.favourite_game" name="game_played">
+ </div>  
 
     <div class="form-group">
-      <label>Satus:</label>
-      <select class="form-control" id="status" required>
-        <option *ngFor="let status of status1" [value]="status">{{status}}</option>
-      </select>
-  </div>  
+        <label> Status:   </label>
+      <input  type="text" class="form-control"  #status="ngModel"
+      id="time" [(ngModel)] ="playerService.selectedPlayer.status" name="status">
+   </div>  
   <div>
-    <button class="btn btn-primary" type="submit" id="addbutton">Add</button>
+    <button class="btn btn-primary" type="submit" id="addbutton" >Add</button>
     <br>
-    <button class="btn btn-primary" type="submit"id="cancelbutton" >Cancel</button>
+    <button class="btn btn-primary" type="submit"id="cancelbutton" (click)="resetForm(playerForm)" >Cancel</button>
   </div>
   </form>
+  </div>
+
+  <div id="success" *ngIf="showSuccessMessage">
+    Players Saved
   </div>

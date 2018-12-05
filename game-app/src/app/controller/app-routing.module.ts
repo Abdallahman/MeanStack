@@ -28,7 +28,7 @@ const appRoutes: Routes=[
 {path:'mainpage' ,component: MainpageComponent },
 {path:'player-list', component: PlayerListComponent},
 {path:'admin-addplayer', component:AdminAddplayerComponent},
-{path:'admin-editplayer', component:AdminEditplayerComponent},
+{path:'admin-editplayer/:id', component:AdminEditplayerComponent},
 {path:'admingamelist', component:AdminGamelistComponent},
 {path: 'admin-playerlist', component: AdminPalyerlistComponent}
 
